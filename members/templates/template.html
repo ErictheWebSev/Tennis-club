@@ -1,0 +1,42 @@
+{% extends 'master.html' %}
+{% load static %}
+
+{% block css %}
+    <link rel="stylesheet" href="{% static 'test.css' %}" />
+{% endblock %}
+
+{% block title %}
+    testing page
+{% endblock %}
+</head>
+
+{% block content %}
+    {% for x in mymembers %}
+        <h1> {{ x.name }}</h1>
+    {% endfor %}
+    
+    {% for x in members reversed %}
+        <h1>{{ x.id }}</h1>
+        <p>{{ x.name }}</p>
+        <p>{{ x.lastname }}</p>
+    {% endfor %}
+    
+    <table border="1" style="border-collapse: collapse;">
+        <tr>
+            <th> ID</th>
+            <th> Name</th>
+            <th> Lastname</th>
+        </tr>
+        {% for x in mymembers %}
+        <tr>
+                <td> {{ x.id }}</td>
+                <td> {{ x.name }}</td>
+                <td> {{ x.lastname }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    
+        
+    
+    <p> you can see what the variable looks like in views.py</p>
+{% endblock %}

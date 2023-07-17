@@ -1,0 +1,36 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    
+    {% block css %}
+        <link rel="stylesheet" href="{% static 'mystyle.css' %}">
+    {% endblock %}
+    
+    <title>{% block title %} {% endblock %}</title>
+    <script src="{% static 'main.js' %}"></script>
+</head>
+<body>
+    <nav>
+        <label class="logo"> TennisClubX</label>
+        
+        <ul>
+            <li><a href="/"> Home</a></li>
+            <li><a href="/about"> About</a></li>
+            <li><a href="/contact"> Contact</a></li>
+            <li><a href="/members"> Members</a></li>
+            <li><a href="/form"> Register</a></li>
+        </ul>
+        
+        <label id="icon" onclick="openNav()">
+            <span> &#9776; </span>
+        </label>
+    </nav>
+    
+    {% block content %}
+    {% endblock %}
+</body>
+</html>

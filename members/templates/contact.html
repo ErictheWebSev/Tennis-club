@@ -1,0 +1,61 @@
+{% extends 'master.html' %}
+
+{% block title %}
+    Contact Us
+{% endblock %}
+
+{% block content %}
+    <div class="mycard">
+        <h1> Get In Touch</h1>
+        
+        <p>
+            Get in touch through various forms of contacts. You can use my social media, phone or email.
+            But I'd prefer the email since its all part of the project.
+        </p>
+    </div>
+    
+    <div class="mycard">
+        <h1> Social media  </h1>
+        
+        <p> Facebook: <a href="https://m.facebook.com/profile.php?id=100086285746377"> Eric Alfred</a></p>
+        <p> WhatsApp: +2347010363424</p>
+        
+    </div>
+    
+    <div class="mycard">
+        <h1> Phone</h1>
+        
+        <p> +2347010363424</p>
+        <p> +2348070879306</p>
+    </div>
+    
+    <div class="mycard">
+        <h1> Email</h1>
+        
+        <p> Email address: alfrederic371@gmail.com</p>
+        <p> Name: Eric Alfred</p>
+    </div>
+    
+    <div class="mycard">
+        <h1> Send Email</h1>
+        
+        <form method="post" action="{% url 'contact' %}">
+            {% csrf_token %}
+            <label for="subject"> Subject</label>
+            <input type="text" name="subject" id="subject" placeholder="Subject....">
+            
+             <label for="message"> Message</label>
+            <textarea type="text" name="message" id="message" placeholder="Input message...."></textarea>
+            
+            <label for="email"> Email address</label>
+            <input type="email" name="email" id="email" placeholder="Your Email address....">
+            
+             <label for="recipient"> Recipient</label>
+            <input type="email" name="recipient" id="recipient" placeholder="Recipient Email....">
+            
+            <input type="submit" value="Send Email">
+            
+        </form>
+    </div>
+    
+{% endblock %}
